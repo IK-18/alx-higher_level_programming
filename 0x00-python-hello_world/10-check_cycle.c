@@ -1,16 +1,15 @@
 #include "lists.h"
 
 /**
- * check_cycle - check for loop in LL
- * @list: head of linked list
+ * check_cycle - check for loop in list
+ * @list: pointer to linked list linked list
  *
- * Description - check for loops in LL
- * Return: 1 if cycled, 0 if not
+ * Return: 1 if it is a cycle, 0 otherwise
  */
 
 int check_cycle(listint_t *list)
 {
-	listin_t *tmp1, *tmp2;
+	listint_t *tmp1, *tmp2;
 
 	if (!list)
 		return (0);
