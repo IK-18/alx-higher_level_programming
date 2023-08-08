@@ -16,7 +16,7 @@ int check_cycle(listint_t *list)
 		return (0);
 	tmp1 = list;
 	tmp2 = list->next;
-	while (tmp1 && tmp2 && tmp2 ->next)
+	while (tmp1 && tmp2 && tmp2->next)
 	{
 		if (tmp1 == tmp2)
 			return (1);
