@@ -4,7 +4,7 @@
 
 
 class Node:
-    """Defines a node of a singly lonked list
+    """Defines a node of a singly linked list
 
     Attributes:
         data (int): data in node
@@ -45,46 +45,45 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
-    class SinglyLinkedList:
-        """Defines the list
 
-        Attributes:
-            head (Node): first node in list
+class SinglyLinkedList:
+    """Defines the list
 
+    Attributes:
+        head (Node): first node in list
+
+    """
+
+    def __init__(self):
+        """Initializes the list"""
+        self.__head = None
+
+    def sorted_insert(self, value):
+        """Inserts a new Node in the corrext sorted position in the list
+
+        Args:
+            value (Node): new node
         """
-
-        def __init__(self):
-            """Initializes the list"""
-            self.__head = None
-
-        def sorted_insert(self, value):
-            """Inserts a new Node in the corrext sorted position in the list
-
-            
-
-            Args:
-                value (Node): new node
-            """
-            new = Node(value)
-            if self.__head is None:
-                new.next_node = None
-                self.__head = new
-            elif self.__head.data > value:
-                new.next_node = self.__head
-                self.__head = new
-            else:
-                tmp = self.__head
-                while (tmp.next_node is not None and
-                        tmp.next_node.data < value):
-                    tmp = tmp.next_node
-                new.next_node = tmp.next_node
-                tmp.next_node = new
-
-        def __str__(self):
-            """Defines the print() representation of a singly linked list"""
-            dataset = []
+        new = Node(value)
+        if self.__head is None:
+            new.next_node = None
+            self.__head = new
+        elif self.__head.data > value:
+            new.next_node = self.__head
+            self.__head = new
+        else:
             tmp = self.__head
-            while tmp is not None:
-                dataset.append(str(tmp.data))
+            while (tmp.next_node is not None and
+                    tmp.next_node.data < value):
                 tmp = tmp.next_node
-            return ('\n'.join(dataset))
+            new.next_node = tmp.next_node
+            tmp.next_node = new
+
+    def __str__(self):
+        """Defines the print() representation of a singly linked list"""
+        dataset = []
+        tmp = self.__head
+        while tmp is not None:
+            dataset.append(str(tmp.data))
+            tmp = tmp.next_node
+        return ('\n'.join(dataset))
