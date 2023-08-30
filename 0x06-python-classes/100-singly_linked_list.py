@@ -58,17 +58,24 @@ class Node:
             self.__head = None
 
         def sorted_insert(self, value):
-            """Inserts a new Node in the corrext sorted position in the list"""
+            """Inserts a new Node in the corrext sorted position in the list
+
+            
+
+            Args:
+                value (Node): new node
+            """
             new = Node(value)
             if self.__head is None:
-                self.__head = new
                 new.next_node = None
+                self.__head = new
             elif self.__head.data > value:
                 new.next_node = self.__head
                 self.__head = new
             else:
                 tmp = self.__head
-                while (tmp.next_node is not None and tmp.next_node < value):
+                while (tmp.next_node is not None and
+                        tmp.next_node.data < value):
                     tmp = tmp.next_node
                 new.next_node = tmp.next_node
                 tmp.next_node = new
@@ -77,7 +84,7 @@ class Node:
             """Defines the print() representation of a singly linked list"""
             dataset = []
             tmp = self.__head
-            while (isinstance(tmp, Node)):
+            while tmp is not None:
                 dataset.append(str(tmp.data))
                 tmp = tmp.next_node
             return ('\n'.join(dataset))
