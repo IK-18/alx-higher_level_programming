@@ -64,7 +64,7 @@ class Node:
                 self.__head = new
             else:
                 tmp = self.__head
-                while (isinstance(tmp.next_node, Node) and tmp.next_node < value):
+                while (tmp.next_node is not None and tmp.next_node < value):
                     tmp = tmp.next_node
                 new.next_node = tmp.next_node
                 tmp.next_node = new
