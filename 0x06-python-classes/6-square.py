@@ -8,6 +8,7 @@ class Square:
 
     Attributes:
         size (int): size of the square
+        position (tuple): coordinates of the square
 
     """
 
