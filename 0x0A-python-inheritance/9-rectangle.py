@@ -5,7 +5,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Implements a Rectangle subclass of BaseGeometry
-    
+
     Properties:
         width (int): width of the rectangle
         height (int): height of the rectangle
