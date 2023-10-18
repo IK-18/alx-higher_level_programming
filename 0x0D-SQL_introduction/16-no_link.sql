@@ -1,4 +1,4 @@
---Lists all records
+-- Lists all records
 SELECT `score`, `name`
 FROM `second_table`
 WHERE `name` != ""
