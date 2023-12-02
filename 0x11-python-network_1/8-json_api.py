@@ -15,4 +15,4 @@ if __name__ == "__main__":
         else:
             print("[{}] {}".format(resp.get("id"), resp.get("name")))
     except ValueError:
-        priny("Not a valid JSON")
+        print("Not a valid JSON")
